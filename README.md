@@ -1,9 +1,6 @@
 # Implementation-of-Doubly-Linked-List
 Implementation of doubly linked list in java with extending singly linked list with generics.
 
-/*
-* created on Sep 1 2018
-*/
 
 Compiling the code in IntelliJ Idea:
 * create a empty project.
