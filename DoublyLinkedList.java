@@ -1,6 +1,17 @@
 package vxg180002;
 
+
+/*
+ * created on Aug 27 2018
+ *
+ * team Members :
+ * Vikram Gopali (netId : vxg180002)
+ * Nirbhay Sibal (netId : nxs180002)
+ */
+
+
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class DoublyLinkedList<T> extends SinglyLinkedList<T> implements Iterable<T>{
 
@@ -13,13 +24,10 @@ public class DoublyLinkedList<T> extends SinglyLinkedList<T> implements Iterable
         }
     }
 
-    protected DoublyLinkedList.Entry<T> head, tail;
-
-
     public DoublyLinkedList() {
+        super();
         head = new Entry<T>(null, null,null);
         tail = head;
-        size = 0;
     }
 
     public Iterator<T> iterator () {
@@ -30,7 +38,11 @@ public class DoublyLinkedList<T> extends SinglyLinkedList<T> implements Iterable
 
         public DLLIterator(){
             super();
-            cursor = head;
+        }
+
+        public void remove(){
+            super.remove();
+            ((DoublyLinkedList.Entry) cursor.next).prev = (DoublyLinkedList.Entry)prev;
         }
 
         public boolean hasPrev(){
@@ -41,24 +53,27 @@ public class DoublyLinkedList<T> extends SinglyLinkedList<T> implements Iterable
             if(hasPrev()){
                 cursor = prev;
                 prev = ((Entry<T>) cursor).prev;
+                ready = true;
+            }
+            if(null == cursor.element){
+                throw new NoSuchElementException();
             }
             return cursor.element;
         }
 
         public void add(T addElem){
-            if (cursor instanceof DoublyLinkedList.Entry){
-                cursor.next = new Entry<T>(addElem,cursor.next,((DoublyLinkedList.Entry)cursor));
-            }else{
-                throw new ClassCastException();
+            cursor.next = new Entry<T>(addElem,cursor.next,((DoublyLinkedList.Entry<T>)cursor));
+            prev = cursor;
+            if(tail == cursor){
+                tail = cursor.next;
             }
+            cursor = cursor.next;
+            size++;
+            ready = false;
         }
     }
 
     public void add(T x){
-        Entry<T> temp = new Entry<T>(x,null,tail);
-        tail.next = temp;
-        tail = temp;
+        super.add(new Entry<T>(x,null,((DoublyLinkedList.Entry<T>)tail)));
     }
-
-
 }

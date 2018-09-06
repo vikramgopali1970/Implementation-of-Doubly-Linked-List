@@ -1,8 +1,7 @@
-
-
 /** @author rbk
  *  Singly linked list: for instructional purposes only
  *  Ver 1.0: 2018/08/21
+ *  Ver 2.0: 2018/08/28: modified to be able to extend to DoublyLinkedList
  *  Entry class has generic type associated with it, to allow inheritance.
  *  We can now have a doubly linked list class DLL that has
 
@@ -16,6 +15,15 @@ this.prev = prev;
 }
 
  */
+
+/*
+ * created on Aug 27 2018
+ *
+ * team Members :
+ * Vikram Gopali (netId : vxg180002)
+ * Nirbhay Sibal (netId : nxs180002)
+ */
+
 package vxg180002;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -29,7 +37,6 @@ public class SinglyLinkedList<T> implements Iterable<T> {
 
         Entry(E x, Entry<E> nxt) {
             element = x;
-            if(x != null)
             next = nxt;
         }
     }
@@ -43,16 +50,6 @@ public class SinglyLinkedList<T> implements Iterable<T> {
         tail = head;
         size = 0;
     }
-
-    /*
-        * Here is the description of the usage of iterator and iterable in this file.
-        * We have imported the iterator class and used it to iterate over the elements
-          in the SLLIterator class.
-        * And the Iterable interface which has a iterator method is defined in this file to
-          return the SLLIterator object.
-        * In the main we use the iterator class defined here.
-        * Refer this : https://gist.github.com/jnwhiteh/68d095c630dfcaddffd1
-     */
 
     public Iterator<T> iterator() { return new SLLIterator(); }
 
@@ -88,9 +85,6 @@ public class SinglyLinkedList<T> implements Iterable<T> {
             if(cursor == tail) {
                 tail = prev;
             }
-
-            //following statement cursor and previous will be the same because the next() always
-            // moves ahead and then prints the value and not vice versa
             cursor = prev;
             ready = false;  // Calling remove again without calling next will result in exception thrown
             size--;
@@ -99,7 +93,11 @@ public class SinglyLinkedList<T> implements Iterable<T> {
 
     // Add new elements to the end of the list
     public void add(T x) {
-        tail.next = new Entry<>(x, null);
+        add(new Entry<>(x, null));
+    }
+
+    public void add(Entry<T> ent) {
+        tail.next = ent;
         tail = tail.next;
         size++;
     }
