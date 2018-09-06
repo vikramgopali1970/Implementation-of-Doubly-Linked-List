@@ -3,11 +3,6 @@ Implementation of doubly linked list in java with extending singly linked list w
 
 /*
 * created on Sep 1 2018
-*
-* Project started working on Aug 27 2018
-* team Members :
-* Vikram Gopali (netId : vxg180002)
-* Nirbhay Sibal (netId : nxs180002)
 */
 
 Compiling the code in IntelliJ Idea:
