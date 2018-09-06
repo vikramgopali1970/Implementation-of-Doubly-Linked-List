@@ -19,33 +19,33 @@ Running the code:
   cursor and next element.
 * Option 5 : inserts node at the tail.
 
-Sample Input : 
-0,1,2,3,4,5,6,7,8,9
+Sample Input : <br/>
+0,1,2,3,4,5,6,7,8,9<br/>
 
-Sample Output:('->' indicated console input)
--> 1
-0
-->1
-1
-->1
-2
-->2
-9: 0 1 3 4 5 6 7 8 9
-->3
-1
-->3
-0
-->4
-Please enter the value you want to enter
-->456
-10: 0 456 1 3 4 5 6 7 8 9
-->1
-456
-->1
-1
-->1
-3
-->5
-Please enter the value you want to enter
-->5677
-11: 0 456 1 3 4 5 6 7 8 9 5677
+Sample Output:('->' indicated console input)<br/>
+-> 1<br/>
+0<br/>
+->1<br/>
+1<br/>
+->1<br/>
+2<br/>
+->2<br/>
+9: 0 1 3 4 5 6 7 8 9<br/>
+->3<br/>
+1<br/>
+->3<br/>
+0<br/>
+->4<br/>
+Please enter the value you want to enter<br/>
+->456<br/>
+10: 0 456 1 3 4 5 6 7 8 9<br/>
+->1<br/>
+456<br/>
+->1<br/>
+1<br/>
+->1<br/>
+3<br/>
+->5<br/>
+Please enter the value you want to enter<br/>
+->5677<br/>
+11: 0 456 1 3 4 5 6 7 8 9 5677<br/>
