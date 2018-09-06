@@ -1,15 +1,6 @@
 package vxg180002;
 
 
-/*
- * created on Aug 27 2018
- *
- * team Members :
- * Vikram Gopali (netId : vxg180002)
- * Nirbhay Sibal (netId : nxs180002)
- */
-
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

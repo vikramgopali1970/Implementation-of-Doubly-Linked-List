@@ -1,28 +1,4 @@
-/** @author rbk
- *  Singly linked list: for instructional purposes only
- *  Ver 1.0: 2018/08/21
- *  Ver 2.0: 2018/08/28: modified to be able to extend to DoublyLinkedList
- *  Entry class has generic type associated with it, to allow inheritance.
- *  We can now have a doubly linked list class DLL that has
 
-public class DoublyLinkedList<T> extends SinglyLinkedList<T> {
-static class Entry<E> extends SinglyLinkedList.Entry<E> {
-Entry<E> prev;
-Entry(E x, Entry<E> next, Entry<E> prev) {
-super(x, nxt);
-this.prev = prev;
-}
-}
-
- */
-
-/*
- * created on Aug 27 2018
- *
- * team Members :
- * Vikram Gopali (netId : vxg180002)
- * Nirbhay Sibal (netId : nxs180002)
- */
 
 package vxg180002;
 import java.util.Iterator;
